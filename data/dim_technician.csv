@@ -1,0 +1,53 @@
+technician_id,dealership_id,full_name,specialty_level,hourly_cost_rate,hire_date,is_active
+TCH-001,DLR-001,Technician 1,Apprentice,18.0,2022-01-15,True
+TCH-002,DLR-001,Technician 2,Apprentice,18.0,2022-01-15,True
+TCH-003,DLR-001,Technician 3,Master Technician,42.0,2022-01-15,True
+TCH-004,DLR-001,Technician 4,Certified Technician,28.0,2022-01-15,True
+TCH-005,DLR-001,Technician 5,Certified Technician,28.0,2022-01-15,True
+TCH-006,DLR-001,Technician 6,Certified Technician,28.0,2022-01-15,True
+TCH-007,DLR-001,Technician 7,Apprentice,18.0,2022-01-15,True
+TCH-008,DLR-001,Technician 8,Apprentice,18.0,2022-01-15,True
+TCH-009,DLR-001,Technician 9,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-010,DLR-001,Technician 10,Apprentice,18.0,2022-01-15,True
+TCH-011,DLR-001,Technician 11,Apprentice,18.0,2022-01-15,True
+TCH-012,DLR-001,Technician 12,Apprentice,18.0,2022-01-15,True
+TCH-013,DLR-001,Technician 13,Certified Technician,28.0,2022-01-15,True
+TCH-014,DLR-001,Technician 14,Certified Technician,28.0,2022-01-15,True
+TCH-015,DLR-001,Technician 15,Apprentice,18.0,2022-01-15,True
+TCH-016,DLR-001,Technician 16,Certified Technician,28.0,2022-01-15,True
+TCH-017,DLR-002,Technician 17,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-018,DLR-002,Technician 18,Certified Technician,28.0,2022-01-15,True
+TCH-019,DLR-002,Technician 19,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-020,DLR-002,Technician 20,Master Technician,42.0,2022-01-15,True
+TCH-021,DLR-002,Technician 21,Apprentice,18.0,2022-01-15,True
+TCH-022,DLR-002,Technician 22,Certified Technician,28.0,2022-01-15,True
+TCH-023,DLR-002,Technician 23,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-024,DLR-002,Technician 24,Master Technician,42.0,2022-01-15,True
+TCH-025,DLR-002,Technician 25,Master Technician,42.0,2022-01-15,True
+TCH-026,DLR-002,Technician 26,Certified Technician,28.0,2022-01-15,True
+TCH-027,DLR-003,Technician 27,Certified Technician,28.0,2022-01-15,True
+TCH-028,DLR-003,Technician 28,Master Technician,42.0,2022-01-15,True
+TCH-029,DLR-003,Technician 29,Apprentice,18.0,2022-01-15,True
+TCH-030,DLR-003,Technician 30,Apprentice,18.0,2022-01-15,True
+TCH-031,DLR-003,Technician 31,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-032,DLR-003,Technician 32,Apprentice,18.0,2022-01-15,True
+TCH-033,DLR-003,Technician 33,Master Technician,42.0,2022-01-15,True
+TCH-034,DLR-003,Technician 34,Master Technician,42.0,2022-01-15,True
+TCH-035,DLR-003,Technician 35,Master Technician,42.0,2022-01-15,True
+TCH-036,DLR-003,Technician 36,Apprentice,18.0,2022-01-15,True
+TCH-037,DLR-003,Technician 37,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-038,DLR-003,Technician 38,Apprentice,18.0,2022-01-15,True
+TCH-039,DLR-004,Technician 39,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-040,DLR-004,Technician 40,Apprentice,18.0,2022-01-15,True
+TCH-041,DLR-004,Technician 41,Master Technician,42.0,2022-01-15,True
+TCH-042,DLR-004,Technician 42,Master Technician,42.0,2022-01-15,True
+TCH-043,DLR-004,Technician 43,Certified Technician,28.0,2022-01-15,True
+TCH-044,DLR-004,Technician 44,Apprentice,18.0,2022-01-15,True
+TCH-045,DLR-004,Technician 45,Apprentice,18.0,2022-01-15,True
+TCH-046,DLR-004,Technician 46,Certified Technician,28.0,2022-01-15,True
+TCH-047,DLR-005,Technician 47,Master Technician,42.0,2022-01-15,True
+TCH-048,DLR-005,Technician 48,Apprentice,18.0,2022-01-15,True
+TCH-049,DLR-005,Technician 49,Certified Technician,28.0,2022-01-15,True
+TCH-050,DLR-005,Technician 50,Apprentice,18.0,2022-01-15,True
+TCH-051,DLR-005,Technician 51,Diagnostic Specialist,42.0,2022-01-15,True
+TCH-052,DLR-005,Technician 52,Master Technician,42.0,2022-01-15,True

@@ -1,0 +1,194 @@
+// ==============================================================================
+// AUTOMOTIVE DEALERSHIP & AFTER-SALES POWER BI MEASURES SUITE
+// Author: Adil El Idrissi (adileldirissi)
+// Engine: Microsoft Power BI / Analysis Services Tabular (DAX)
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. VOLUME & OPERATIONAL METRICS
+// ------------------------------------------------------------------------------
+
+Total Repair Orders = 
+COUNTROWS('fact_service_orders')
+
+Completed Repair Orders = 
+CALCULATE(
+    [Total Repair Orders],
+    'fact_service_orders'[repair_status] = "Completed"
+)
+
+Total Clocked Hours = 
+SUM('fact_service_orders'[clocked_hours])
+
+Total Billed Hours = 
+SUM('fact_service_orders'[billed_hours])
+
+Available Capacity Hours = 
+SUM('dim_dealership'[capacity_bays]) * 8 * [Working Days Selected]
+
+Working Days Selected = 
+COUNTROWS(
+    FILTER(
+        'dim_date',
+        'dim_date'[is_working_day] = TRUE()
+    )
+)
+
+// ------------------------------------------------------------------------------
+// 2. WORKSHOP PRODUCTIVITY & EFFICIENCY RATIOS
+// ------------------------------------------------------------------------------
+
+Workshop Efficiency % = 
+DIVIDE(
+    [Total Billed Hours],
+    [Total Clocked Hours],
+    0
+)
+
+Technician Utilization % = 
+DIVIDE(
+    [Total Clocked Hours],
+    [Available Capacity Hours],
+    0
+)
+
+Overall Labor Productivity % = 
+[Workshop Efficiency %] * [Technician Utilization %]
+
+Average Hours Per Repair Order = 
+DIVIDE(
+    [Total Billed Hours],
+    [Completed Repair Orders],
+    0
+)
+
+First Time Fix Rate % = 
+DIVIDE(
+    CALCULATE([Total Repair Orders], 'fact_service_orders'[is_first_time_fix] = TRUE()),
+    [Total Repair Orders],
+    0
+)
+
+Average CSAT Score = 
+AVERAGE('fact_service_orders'[csat_rating])
+
+// ------------------------------------------------------------------------------
+// 3. REVENUE, COGS & PROFITABILITY METRICS
+// ------------------------------------------------------------------------------
+
+Total Labor Revenue = 
+SUM('fact_service_orders'[labor_revenue])
+
+Total Parts Revenue = 
+SUM('fact_service_orders'[parts_revenue])
+
+Total Service Revenue = 
+[Total Labor Revenue] + [Total Parts Revenue]
+
+Total Parts COGS = 
+SUM('fact_service_orders'[parts_cogs])
+
+Total Labor Cost = 
+SUMX(
+    'fact_service_orders',
+    'fact_service_orders'[clocked_hours] * RELATED('dim_technician'[hourly_cost_rate])
+)
+
+Total Service Gross Profit = 
+[Total Service Revenue] - ([Total Labor Cost] + [Total Parts COGS])
+
+Service Gross Margin % = 
+DIVIDE(
+    [Total Service Gross Profit],
+    [Total Service Revenue],
+    0
+)
+
+Labor Gross Margin % = 
+DIVIDE(
+    [Total Labor Revenue] - [Total Labor Cost],
+    [Total Labor Revenue],
+    0
+)
+
+Parts Gross Margin % = 
+DIVIDE(
+    [Total Parts Revenue] - [Total Parts COGS],
+    [Total Parts Revenue],
+    0
+)
+
+Average Repair Order Value = 
+DIVIDE(
+    [Total Service Revenue],
+    [Completed Repair Orders],
+    0
+)
+
+// ------------------------------------------------------------------------------
+// 4. TIME INTELLIGENCE & VARIANCE ANALYSIS
+// ------------------------------------------------------------------------------
+
+Revenue YTD = 
+TOTALYTD(
+    [Total Service Revenue],
+    'dim_date'[date]
+)
+
+Revenue PY = 
+CALCULATE(
+    [Total Service Revenue],
+    SAMEPERIODLASTYEAR('dim_date'[date])
+)
+
+Revenue YoY Growth = 
+[Total Service Revenue] - [Revenue PY]
+
+Revenue YoY Growth % = 
+DIVIDE(
+    [Revenue YoY Growth],
+    [Revenue PY],
+    0
+)
+
+Revenue MTD = 
+TOTALMTD(
+    [Total Service Revenue],
+    'dim_date'[date]
+)
+
+Revenue Trailing 3M = 
+CALCULATE(
+    [Total Service Revenue],
+    DATESINPERIOD(
+        'dim_date'[date],
+        MAX('dim_date'[date]),
+        -3,
+        MONTH
+    )
+)
+
+// ------------------------------------------------------------------------------
+// 5. BUDGET VARIANCE & THRESHOLD FORMATTING
+// ------------------------------------------------------------------------------
+
+Revenue Budget = 
+SUM('fact_service_orders'[budget_target_revenue])
+
+Revenue vs Budget Variance = 
+[Total Service Revenue] - [Revenue Budget]
+
+Revenue vs Budget Variance % = 
+DIVIDE(
+    [Revenue vs Budget Variance],
+    [Revenue Budget],
+    0
+)
+
+KPI Status Color = 
+SWITCH(
+    TRUE(),
+    [Revenue vs Budget Variance %] >= 0.05, "#10B981",  // Green: On or above target
+    [Revenue vs Budget Variance %] >= -0.05, "#F59E0B", // Amber: Within 5% tolerance
+    "#EF4444"                                          // Red: Underperforming
+)

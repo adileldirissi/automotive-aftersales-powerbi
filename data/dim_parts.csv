@@ -1,0 +1,11 @@
+part_sku,part_name,category,unit_cost,unit_retail_price,reorder_level,lead_time_days
+PRT-101,Synthetic Engine Oil 5W30 (5L),Fluids,22.5,48.0,150,2
+PRT-102,Ceramic Front Brake Pads Set,Braking,45.0,115.0,60,4
+PRT-103,Ventilated Front Brake Discs (Pair),Braking,85.0,210.0,30,5
+PRT-104,Activated Carbon Cabin Filter,Filtration,12.0,32.0,80,3
+PRT-105,High-Flow Air Filter Element,Filtration,15.0,38.0,75,3
+PRT-106,Spark Plug Platinum Iridium (Pack of 4),Ignition,28.0,72.0,90,4
+PRT-107,Timing Belt & Tensioner Kit,Powertrain,120.0,280.0,20,7
+PRT-108,Heavy-Duty AGM Battery 80Ah,Electrical,95.0,210.0,25,3
+PRT-109,Electric Water Pump Assembly,Cooling,140.0,310.0,15,8
+PRT-110,Front Shock Absorber Strut,Suspension,75.0,185.0,20,6

@@ -1,0 +1,6 @@
+dealership_id,dealership_name,city,region,brand_franchise,capacity_bays,opening_date
+DLR-001,Casablanca Corniche Motors,Casablanca,Grand Casablanca,Audi & Volkswagen,18,2018-03-15
+DLR-002,Rabat Agdal Prestige,Rabat,Rabat-Salé-Kénitra,Porsche & Bentley,12,2019-06-20
+DLR-003,Marrakech Menara Auto,Marrakech,Marrakech-Safi,Volkswagen & Škoda,14,2020-01-10
+DLR-004,Tanger Med Port Dealership,Tangier,Tanger-Tétouan-Al Hoceïma,SEAT & CUPRA,10,2021-09-01
+DLR-005,Fès Saïss Automotive,Fez,Fès-Meknès,Škoda & Volkswagen,8,2022-04-12
