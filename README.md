@@ -9,6 +9,22 @@ An enterprise-grade **Business Intelligence & KPI Analytics solution** engineere
 
 ---
 
+## 📊 Executive Dashboard Preview
+
+![Power BI Automotive Dealership & After-Sales Performance Dashboard](./docs/powerbi_dashboard_preview.jpg)
+
+*Dark-mode executive view designed in Power BI Desktop featuring dynamic date range, dealership branch, and vehicle franchise filtering.*
+
+| Section | Core Business Visuals | Primary Evaluated DAX Measures |
+| :--- | :--- | :--- |
+| **KPI Scorecard** | 5 Executive KPI Cards with dynamic status badges | `[Total Revenue MAD]`, `[Workshop Efficiency %]`, `[Labor Gross Margin %]`, `[First-Time Fix Rate %]`, `[Parts Turnover Ratio]` |
+| **Operational Efficiency** | Monthly Billed vs. Clocked Hours dual-axis combo chart | `[Total Billed Hours]`, `[Total Clocked Hours]`, `[Workshop Efficiency %]` |
+| **Consumables & Parts** | Spare Parts Revenue distribution donut chart | `[Parts Revenue MAD]`, `[Parts Margin %]` |
+| **Regional Benchmark** | Dealership rankings (Casablanca, Rabat, Marrakech) | `[Revenue Rank by Dealership]`, `[Dealership Revenue Contribution %]` |
+| **Workforce Allocation** | Technician billable utilization matrix by specialty | `[Tech Billable Utilization %]` |
+
+---
+
 ## 🎯 Executive Overview & Business Problem
 
 Automotive dealership groups face complex operational challenges in after-sales management:
